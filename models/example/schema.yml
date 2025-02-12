@@ -19,12 +19,4 @@ models:
             tests:
                 - unique
                 - not_null
-          - name: my_test_dbt_model
-            description: "A starter dbt model"
-            columns:
-                - name: Shreya, Athrav
-                  description: "The primary key for this table"
-                  tests:
-                      - unique
-                      - not_null
-
+                
