@@ -11,7 +11,7 @@ with
                         "review_date",
                         "reviewer_name",
                         "review_text",
-                        "review_sentiment"
+                        "review_sentiment",
                     ]
                 )
             }} as review_key,
@@ -22,11 +22,9 @@ with
             reviewer_name,
             review_text,
             review_sentiment
-        from {{ ref( 'stg_reviews') }} as rev
+        from {{ ref("stg_reviews") }} as rev
         inner join {{ ref("dim_listing") }} as list on rev.listing_id = list.listing_id
         inner join {{ ref("dim_hosts") }} as host on list.host_id = host.host_id
-
     )
-
 select *
 from cte_fact_review
