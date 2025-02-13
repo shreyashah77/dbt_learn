@@ -1,6 +1,6 @@
 with cte_review as (
     select listing_id, date, reviewer_name, comments, sentiment
-    from airbnb.raw.raw_reviews
+   from {{ source('airbnb', 'REVIEWS') }}
 
 )
 
